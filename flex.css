@@ -1,0 +1,24 @@
+nav {
+  border: 1px solid firebrick;
+  border-radius: 6px;
+}
+
+nav ul {
+  border: 1px solid gray;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav ul li {
+  border-radius: 6px;
+  border: 1px solid firebrick;
+}
+
+.nav-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1rem;
+}
+/*# sourceMappingURL=flex.css.map */

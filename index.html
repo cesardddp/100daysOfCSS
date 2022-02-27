@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="cesardddp@hotmail.com">
+
+    <meta name="og:title" content="">
+    <meta name="og:image" content="">
+    <meta name="og:url" content="">
+
+    <title>TITLE</title>
+
+    <link rel="shortcut icon" href="favicon.ico">
+
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;600;900&display=swap">
+
+    <script src="https://kit.fontawesome.com/3db21c2fa2.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="flex.css">
+    <style>
+        .texto-descricao {
+            text-align: justify;
+        }
+    </style>
+
+</head>
+
+<header class="">
+    <a href="/" class="">
+        <img src="#" alt="" width="60" class="d-inline-block">
+
+        <h1><b>Dispaly Flex</b></h1>
+    </a>
+
+    <ul class="">
+        <li class=""><a href="/">Flex</a></li>
+        <!-- <li class=""> <a class="" id=""
+                data-bs-toggle="" aria-expanded="false">#</a> -->
+        <ul class="" aria-labelledby="">
+            <!-- <li><a class="" href="/">Flex</a></li> -->
+        </ul>
+        </li>
+    </ul>
+</header>
+
+
+<main class="">
+    <div id="app" class="">
+
+        <nav>
+            <ul class="nav-list" ref="1-ul">
+
+                <li v-for="l in nav_list"><a href="#">nice</a></li>
+                <li><a href="#">nice</a></li>
+                <li><a href="#">realy nice content</a></li>
+                <li><a href="#">i don now, i dont like it</a></li>
+                <li><a href="#">ok</a></li>
+                <li><a href="#">is not home</a></li>
+                <li><a href="#">home</a></li>
+            </ul>
+        </nav>
+
+    </div>
+</main>
+
+
+
+<footer class="">
+    <p class=""><a style="color: white;" href="#">Voltar lá em cima!</a></p>
+    <p style="color: white;">
+        &copy;202* Mantido por
+        <a style="color: white;" href="https://github.com/cesardddp" target="_blank">cesardddp</a> &middot;
+</footer>
+
+
+
+
+
+<script src="https://unpkg.com/vue@next"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/maska@latest/dist/maska.js"></script>
+
+<script>
+    const App = {
+        compilerOptions: {
+            delimiters: ['@{', '}']
+        },
+        data() {
+            return {
+                nav_list: []
+            }
+        },
+        methods: {
+            getClass(nameClass) {
+                let styleSheet = document.styleSheets[4]
+                let rules = styleSheet.rules
+                for ( cl_indice of rules ) {
+                    // debugger;
+                    if (rules[cl_indice] === nameClass) return rules[cl_indice];
+                }
+            },
+
+            preenche_endereco() {
+
+                axios
+                    .get("https://", {
+                        headers: {
+                            "Accept": "application/json"
+                        },
+                    })
+                    .then(
+                        response => {
+
+                        }
+                    )
+                    .catch(
+                        error => {
+
+                        }
+                    )
+            }
+        },
+        mounted() {
+
+            a = this.$refs['1-ul']
+            console.log(
+                a
+            )
+            this.getClass(".nav-list")
+            debugger
+        }
+    }
+    const app = Vue.createApp(App)
+    // app.use(Maska)
+    app.mount("#app")
+</script>

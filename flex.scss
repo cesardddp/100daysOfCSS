@@ -1,0 +1,24 @@
+nav {
+    border: 1px solid firebrick;
+    border-radius: 6px;
+    ul {
+        
+        border: 1px solid gray;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        
+        li {
+            border-radius: 6px;
+            
+            border: 1px solid firebrick;
+        }
+
+    }
+}
+
+.nav-list {
+    display: flex;
+    gap: 1rem;
+
+}
