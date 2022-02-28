@@ -26,3 +26,14 @@ coverage
 *.njsproj
 *.sln
 *.sw?
+
+css-testsOLD/.gitignore
+css-testsOLD/babel.config.js
+css-testsOLD/package-lock.json
+css-testsOLD/package.json
+css-testsOLD/README.md
+css-testsOLD/public/favicon.ico
+css-testsOLD/public/index.html
+.vite/_metadata.json
+.vite/package.json
+css-tests/.vscode/

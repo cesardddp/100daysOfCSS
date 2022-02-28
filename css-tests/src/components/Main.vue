@@ -1,8 +1,8 @@
 <template>
   <main class>
-    {{css_classes}}
+    css:{{gridStyle}}
     <nav>
-      <ul class="nav-list" ref="1-ul">
+      <ul class="" :style="gridStyle">
         <li v-for="(index, l) in nav_list" :key="index">
           <a href="#">{{ l }}</a>
         </li>
@@ -36,21 +36,16 @@ export default {
   },
   data() {
     return {
-      css_classes: []
+      gridStyle:{
+        display: "flex",
+        gap: "1rem"
+      }
     }
   },
   methods: {
-    getClass(nameClass) {
-      let styleSheet = document.styleSheets[0]
-      let rules = styleSheet.cssRules
-      
-      for (let indice=0; indice<rules.length,indice++;) {
-        if (rules[indice] === nameClass) return rules[indice];
-      }
-    },
+    
   },
   mounted(){
-    this.css_classes = this.getClass('.nav-list')
   }
 
 }
@@ -58,5 +53,6 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
-@import "./css/flex.scss"
+@import "./css/flex.scss";
+
 </style>
